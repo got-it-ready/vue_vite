@@ -8,16 +8,16 @@ interface myType {
 let a = ref(1);
 const obj: myType = {
     name: '张三',
-    age: 16
+    age: 18
 };
 console.log(obj, 'obj==');
 
-const clickBtn = () => {
-    if(a.value == 1) {
-        console.log('11111',a.value);
+// const clickBtn = () => {
+//     if(a.value == 1) {
+//         console.log('11111',a.value);
         
-    }
-};
+//     }
+// };
 </script>
 
 <template>
