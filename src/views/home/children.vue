@@ -18,7 +18,7 @@ const changeValue = () => {
     <div>
         <span></span>
 
-        <a-button type="primary" @click="changeValue">改变作用域的值</a-button>
+        <a-button type="primary" @click="changeValue">改变作用域的值--haha</a-button>
     </div>
     <div>
         <span>我是子组件---{{ props.msg }}</span>
