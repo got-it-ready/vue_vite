@@ -10,7 +10,9 @@ export default defineConfig({
             '@': resolve('src')
         }
     },
-    // lintOnSave: process.env.NODE_ENV !== 'production',
+    optimizeDeps: {
+        exclude: ['pinia']
+    },
     server: {
         //服务器主机名
         // host: '127.0.0.1',
