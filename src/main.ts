@@ -9,4 +9,7 @@ import Antd from 'ant-design-vue';
 // store
 import store from './store';
 
-createApp(App).use(store).use(Antd).mount('#app');
+// router
+import router from '@/router';
+
+createApp(App).use(store).use(router).use(Antd).mount('#app');

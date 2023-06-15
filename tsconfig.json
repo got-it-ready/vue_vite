@@ -27,7 +27,7 @@
     "paths": {
       "@/*": ["./src/*"]  // 路径映射，相对于baseUrl
     },
-
+    "noImplicitAny": false
 
 
   },

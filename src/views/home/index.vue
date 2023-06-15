@@ -3,14 +3,14 @@
  * @Author: fjwu
  * @Date: 2023-06-08 17:55:28
  * @LastEditors: fjwu
- * @LastEditTime: 2023-06-12 18:12:50
+ * @LastEditTime: 2023-06-14 14:31:48
 -->
 
 <script lang="ts" setup>
 import { storeToRefs  } from 'pinia';
 import { ref, defineAsyncComponent } from 'vue';
-const Child = defineAsyncComponent(() => import('./children.vue'));
-import { useProjectStore } from '@/store/project';
+const Child = defineAsyncComponent(() => import('./components/children.vue'));
+// import { useProjectStore } from '@/store/project';
 import { useUserStore } from '@/store/user';
 const user = useUserStore();
 // store属性变响应式 storeToRefs

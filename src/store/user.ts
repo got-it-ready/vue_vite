@@ -23,5 +23,8 @@ export const useUserStore = defineStore({
         updateCounter() {
             this.counter++;
         }
-    }
+    },
+    // 开始数据持久化
+    persist: true
+
 });

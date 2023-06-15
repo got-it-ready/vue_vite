@@ -1,5 +1,13 @@
+<!--
+ * @Description: vite静态资源处理  new URL() 
+ * @Author: fjwu
+ * @Date: 2023-06-12 11:27:29
+ * @LastEditors: fjwu
+ * @LastEditTime: 2023-06-14 14:57:14
+-->
+
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import {  ref, watch, defineExpose } from 'vue';
  
 const list = ref(['基本信息', '访问控制', '项目角色与权限项目角色与权限']);
 const visible = ref(false);
@@ -17,18 +25,18 @@ watch(popVisible, () => {
         visible.value = false;
     }
 });
-
+defineExpose({
+    list
+});
 // 动态图片url的使用
-const getImgUrl = (src: string): string => {
-    // 使用绝对路径
-    return new URL(`/src/assets/${src}`, import.meta.url).href;
-};
+// const getImgUrl = (src: string): string => {
+//     // 使用绝对路径
+//     return new URL(`/src/assets/${src}`, import.meta.url).href;
+// };
 const a = () => {
     console.log('123');
 };
 console.log(a);
-const text = '用域值';
-
 import imgUrl from '@/assets/1.png';
 </script>
 <template>
@@ -47,10 +55,6 @@ import imgUrl from '@/assets/1.png';
 
         </div>
         <img :src="imgUrl" alt="">
-
-        <div class="triangle">
-            <span class="text">已延期</span>
-        </div>
     </div>
 
 </template>
@@ -71,20 +75,5 @@ import imgUrl from '@/assets/1.png';
     width: 500px;
     border: 1px solid red;
 
-}
-.triangle {
-    position: absolute;
-    border-top: 50px solid red;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-right: 50px solid red;
-    .text {
-        display: inline-block;
-        transform: rotate(45deg);
-        position: absolute;
-        top: 10px;
-        color: green;
-        left: 0px;
-    }
 }
 </style>
