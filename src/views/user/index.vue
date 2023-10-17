@@ -126,7 +126,7 @@ const clickSubmit = () => {
         <TableCom ref="leftTable" :tableData="mockData.filter(v=>!v.isSelected)" direction="left" :total="total" @changePagination="changePagination" @changeSelect="changeLeftSelect" />
         <div class="button">
             <a-button type="primary" size="small" @click="moveToRight">加入</a-button>
-            <a-button size="small" @click="moveToLeft">移出</a-button>
+            <a-button size="small" @click="moveToLeft">移出hahaha</a-button>
         </div>
         <TableCom ref="rightTable" direction="right" :tableData="rightTableData" @changeSelect="changeRightSelect" />
 
