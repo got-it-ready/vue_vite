@@ -12,10 +12,17 @@
   },
   "dependencies": {
     "ant-design-vue": "4.0.0-rc.5",
+    "dayjs": "^1.11.9",
+    "moment": "^2.29.4",
     "pinia": "^2.0.35",
     "pinia-plugin-persistedstate": "^3.1.0",
+    "uuid": "^9.0.0",
+    "uuid-v4": "^0.1.0",
+    "v-gantt-chart": "^1.6.3",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "vxe-table": "^4.5.4",
+    "xe-utils": "^3.5.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",

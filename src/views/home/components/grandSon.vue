@@ -3,11 +3,11 @@
  * @Author: fjwu
  * @Date: 2023-06-12 11:27:29
  * @LastEditors: fjwu
- * @LastEditTime: 2023-06-14 14:57:14
+ * @LastEditTime: 2023-07-11 16:51:38
 -->
 
 <script setup lang="ts">
-import {  ref, watch, defineExpose } from 'vue';
+import {  ref, watch } from 'vue';
  
 const list = ref(['基本信息', '访问控制', '项目角色与权限项目角色与权限']);
 const visible = ref(false);
@@ -17,6 +17,7 @@ const clickItem = (value: string) => {
         visible.value = !visible.value;
     } else {
         visible.value = false;
+        modelVisible.value = true;
     }
 };
 watch(popVisible, () => {
@@ -33,10 +34,11 @@ defineExpose({
 //     // 使用绝对路径
 //     return new URL(`/src/assets/${src}`, import.meta.url).href;
 // };
-const a = () => {
+const modelVisible = ref(false);
+const handleOk = () => {
     console.log('123');
 };
-console.log(a);
+ 
 import imgUrl from '@/assets/1.png';
 </script>
 <template>
@@ -55,6 +57,11 @@ import imgUrl from '@/assets/1.png';
 
         </div>
         <img :src="imgUrl" alt="">
+        <a-modal v-model:visible="modelVisible" :maskClosable="false" zIndex="2000"  title="Basic Modal" @ok="handleOk">
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+        </a-modal>
     </div>
 
 </template>

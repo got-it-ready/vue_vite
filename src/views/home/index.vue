@@ -3,13 +3,14 @@
  * @Author: fjwu
  * @Date: 2023-06-08 17:55:28
  * @LastEditors: fjwu
- * @LastEditTime: 2023-06-14 14:31:48
+ * @LastEditTime: 2023-06-30 14:17:09
 -->
 
 <script lang="ts" setup>
 import { storeToRefs  } from 'pinia';
 import { ref, defineAsyncComponent } from 'vue';
 const Child = defineAsyncComponent(() => import('./components/children.vue'));
+const TableList = defineAsyncComponent(() => import('./components/tabTestList.vue'));
 // import { useProjectStore } from '@/store/project';
 import { useUserStore } from '@/store/user';
 const user = useUserStore();
@@ -44,6 +45,10 @@ interface Params {
 const clickBtn2 = (params: Params) => {
     console.log(params, '1111');
 };
+
+const handleChange = (val) => {
+    console.log(val, 'val');
+};
 </script>
 
 <template>
@@ -55,10 +60,11 @@ const clickBtn2 = (params: Params) => {
             <span>用户名：</span>
             <span>{{ name }}--{{ doubleCount }}--{{ doublePlusOne }}</span>
         </div>
-        <Child msg="父组件传的值" name="隔壁老王哈哈哈">
+        <Child msg="父组件传的值" name="隔壁老王哈哈哈" @change-val="handleChange">
             <template #title >我是具名插槽slot</template>
             <template #default="slotsProps">我是匿名插槽slot--{{ slotsProps.text }}<span style="color: red;">{{ slotsProps.count }}</span></template>
         </Child>
+        <TableList />
     </div>
 </template>
 <style scoped lang='scss'>

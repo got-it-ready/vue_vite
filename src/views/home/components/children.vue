@@ -3,10 +3,10 @@
  * @Author: fjwu
  * @Date: 2023-06-12 11:07:53
  * @LastEditors: fjwu
- * @LastEditTime: 2023-06-14 15:29:14
+ * @LastEditTime: 2023-07-11 16:50:30
 -->
 <script setup lang="ts">
-import { ref, withDefaults, defineProps, defineAsyncComponent, onMounted } from 'vue';
+import { ref, withDefaults, defineAsyncComponent, onMounted } from 'vue';
 const GrandSon = defineAsyncComponent(() => import('./grandSon.vue'));
 interface Props {
     msg: string
@@ -14,10 +14,11 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
     msg: '默认值'
 });
-
+const emits = defineEmits(['changeVal']);
 const count = ref(1);
 const changeValue = () => {
     count.value++;
+    emits('changeVal', count.value);
 };
 // ts
 // 使用ref获取实例 InstanceType

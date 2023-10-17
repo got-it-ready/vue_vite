@@ -62,6 +62,21 @@
             "words": true,
             "nonwords": false
         }],
-        "vue/mustache-interpolation-spacing": ["error", "always"] // html中必须使用{{}}有空格
+        "vue/mustache-interpolation-spacing": ["error", "always"], // html中必须使用{{}}有空格
+        "@typescript-eslint/ban-types": ["error",
+        {
+            "types": {
+                "String": false,
+                "Boolean": false,
+                "Number": false,
+                "Symbol": false,
+                "{}": false,
+                "Object": false,
+                "object": false,
+                "Function": false
+            },
+            "extendDefaults": true
+        }
+]
     }
 }

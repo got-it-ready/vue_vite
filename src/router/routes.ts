@@ -1,7 +1,7 @@
 const routes = [
     {
         path: '/',
-        redirect: '/home'
+        redirect: '/login'
     },
     {
         path: '/home',
@@ -12,6 +12,11 @@ const routes = [
         path: '/login',
         name: 'login',
         component: () => import('@/views/login/index.vue')
+    },
+    {
+        path: '/user',
+        name: 'user',
+        component: () => import('@/views/user/index.vue')
     }
 ];
 export default routes;

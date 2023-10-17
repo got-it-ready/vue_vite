@@ -16,6 +16,7 @@ const changeGlobalVal = () => {
 </script>
 
 <template>
+     
     <div>
         <a-button type="primary" @click="clickEdit">修改用户</a-button>
         <a-button type="primary" @click="changeGlobalVal">改变全局数据</a-button>
@@ -29,4 +30,9 @@ const changeGlobalVal = () => {
 </template>
 
 <style scoped>
+.app {
+    width: 100% !important;
+    height: 100vh;
+    background-color: pink;
+}
 </style>
